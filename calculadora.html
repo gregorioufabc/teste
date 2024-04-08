@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Soma</title>
+</head>
+<body>
+    <h1>Calculadora de Soma</h1>
+    <label for="num1">Digite o primeiro número:</label>
+    <input type="number" id="num1"><br><br>
+
+    <label for="num2">Digite o segundo número:</label>
+    <input type="number" id="num2"><br><br>
+
+    <button onclick="calcularSoma()">Calcular Soma</button><br><br>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularSoma() {
+            // Obtém os valores digitados pelo usuário
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            // Verifica se os valores são números válidos
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Por favor, digite números válidos.");
+                return;
+            }
+
+            // Calcula a soma
+            var resultado = num1 + num2;
+
+            // Exibe o resultado na página
+            document.getElementById("resultado").innerText = `A soma de ${num1} e ${num2} é igual a ${resultado}`;
+        }
+    </script>
+</body>
+</html>
 
